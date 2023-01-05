@@ -20,6 +20,7 @@ namespace OHCE
         {
             public const string BienDit = "Well said";
             public const string Bonjour = "Hello";
+            public const string Bonsoir = "Good evening";
             public const string AuRevoir = "Goodbye";
         }
     }

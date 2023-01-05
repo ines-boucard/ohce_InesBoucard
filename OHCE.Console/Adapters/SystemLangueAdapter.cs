@@ -1,17 +1,16 @@
-﻿namespace OHCE.Console.Adapters
+﻿using System.Globalization;
+namespace OHCE.Console.Adapters
 {
-    internal class SystemLangueAdapter : ILangue
+    internal class SystemLangueAdapter 
     {
-        /// <inheritdoc />
-        public string BienDit { get; }
 
-        /// <inheritdoc />
-        public string DireBonjour(PériodeJournée période)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <inheritdoc />
-        public string AuRevoir { get; }
+        public static ILangue langueSystem
+            => CultureInfo.InstalledUICulture.TwoLetterISOLanguageName switch
+            {
+                "fr" => new Langues.LangueFrançaise(),
+                "en" => new Langues.LangueAnglaise(),
+                //    < 12 => PériodeJournée.Matin,
+            };
+   
     }
 }
