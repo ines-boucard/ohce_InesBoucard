@@ -18,6 +18,8 @@ public class Ohce
         var stringBuilder = 
             new StringBuilder();
 
+        stringBuilder.Append(Saluer());
+
         var reversed = new string(
             input.Reverse().ToArray()
         );
@@ -27,7 +29,7 @@ public class Ohce
         if (reversed.Equals(input))
             stringBuilder.Append(_langue.BienDit);
 
-        //stringBuilder.Append(_langue.AuRevoir);
+        stringBuilder.Append(AuRevoir());
 
         return stringBuilder.ToString();
     }

@@ -14,10 +14,10 @@ public class OhceTest
         var ohce = OhceBuilder.Default;
 
         // QUAND on entre une chaîne de caractère
-        var sortie = ohce.Palindrome("toto");
+        var sortie = ohce.Palindrome("loire");
 
         // ALORS elle est renvoyée en miroir
-        Assert.Contains("otot", sortie);
+        Assert.Contains("eriol", sortie);
     }
 
     [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
@@ -33,7 +33,7 @@ public class OhceTest
             .Build();
 
         // QUAND on entre un palindrome
-        const string palindrome = "kayak";
+        const string palindrome = "coloc";
         var sortie = ohce.Palindrome(palindrome);
 
         // ALORS il est renvoyé
@@ -78,7 +78,7 @@ public class OhceTest
         // QUAND l'app démarre
         var sortie = ohce.Palindrome(string.Empty);
 
-        // ALORS <bonjour> de cette langue à cette période est envoyé
+        // ALORS "bonjour" de cette langue à cette période est envoyé
         Assert.StartsWith(langue.DireBonjour(période), sortie);
     }
 
